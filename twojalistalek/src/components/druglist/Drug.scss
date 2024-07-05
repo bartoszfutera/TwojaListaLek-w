@@ -1,0 +1,60 @@
+.drug__container {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.drug__table {
+    background-color: #97999c;
+    padding: 10px;
+    box-shadow: 0 0 30px 0 rgba(0, 0,0,0.2);
+    border-radius: 10px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-size: 12px;
+
+    thead {
+      padding-top: 10px;
+      font-size: 12px;
+
+      th {
+        border: 1px solid #1e3050;
+        padding: 5px;
+        text-align: center;
+      }
+
+      th:last-child {
+        border: none;
+      }
+    }
+
+  tbody {
+    text-align: center;
+
+    td {
+      border: 1px solid #1e3050;
+    }
+
+    td:last-child {
+      border: none;
+    }
+  }
+}
+
+form input {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  padding: 4px;
+  color: #1e3050;
+  border: 1px solid #ccc;
+  background-color: #ccc;
+  border-radius: 5px;
+
+  &:focus {
+    background-color: white;
+    outline: none;
+    color: black;
+  }
+}
