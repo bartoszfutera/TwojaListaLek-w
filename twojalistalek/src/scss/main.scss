@@ -1,11 +1,14 @@
-
+@import "print";
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 body {
-
+  width: calc(100vw - 50px);
+  max-width: 1200px;
+  height: auto;
+  min-height: 500px;
   background-color: white;
   color:#1e3050;
 }

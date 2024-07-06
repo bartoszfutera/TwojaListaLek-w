@@ -1,44 +1,74 @@
 {
   "drugs": [
     {
-      "name": "bisacodyl",
-      "dosage": "5mg",
-      "morning": "0",
-      "afternoon": "0",
-      "evening": "1",
-      "other": "na wieczór ",
-      "notes": "lek na przeczyszczenie, łykamy na noc a na dzień dobry kupa",
-      "id": "oL594Z7"
+      "name": ".package__patient,",
+      "dosage": ".package__patient,",
+      "morning": ".package__patient,",
+      "afternoon": ".package__patient,",
+      "evening": ".package__patient,",
+      "other": ".package__patient,",
+      "notes": ".package__patient,",
+      "id": 1
     },
     {
-      "name": "gówno",
-      "dosage": "5mg",
-      "morning": "1",
-      "afternoon": "1 ",
-      "evening": "0",
-      "other": "xd",
-      "notes": "-",
-      "id": "C1V9Xx1"
+      "name": ".package__patient,",
+      "dosage": ".package__patient,",
+      "morning": ".package__patient,",
+      "afternoon": ".package__patient,",
+      "evening": ".package__patient,",
+      "other": ".package__patient,",
+      "notes": ".package__patient,",
+      "id": 2
     },
     {
-      "name": "bisoprolol",
-      "dosage": "5mg",
-      "morning": "1",
-      "afternoon": "0",
-      "evening": "0",
-      "other": "-",
-      "notes": "lek na serce, łykać stale, ewentualnie jak tachykardia powyzej 120 to lyknac polowe tabletki dodatkowo",
-      "id": "2VRVxQL"
+      "name": ".package__patient,",
+      "dosage": ".package__patient,",
+      "morning": ".package__patient,",
+      "afternoon": ".package__patient,",
+      "evening": ".package__patient,",
+      "other": ".package__patient,",
+      "notes": ".package__patient,",
+      "id": 3
     },
     {
-      "name": "fsdfsdf",
-      "dosage": "sdfsdf",
-      "morning": "sdfsd",
-      "afternoon": "fsdf",
-      "evening": "sdfsd",
-      "other": "fsdf",
-      "notes": "sdfsdfs",
-      "id": "0ct1GPv"
+      "name": ".package__patient,",
+      "dosage": ".package__patient,",
+      "morning": ".package__patient,",
+      "afternoon": ".package__patient,",
+      "evening": ".package__patient,",
+      "other": ".package__patient,",
+      "notes": ".package__patient,",
+      "id": 4
+    },
+    {
+      "name": ".package__patient,",
+      "dosage": ".package__patient,",
+      "morning": ".package__patient,",
+      "afternoon": ".package__patient,",
+      "evening": ".package__patient,",
+      "other": ".package__patient,",
+      "notes": ".package__patient,",
+      "id": 5
+    },
+    {
+      "name": ".package__patient,",
+      "dosage": ".package__patient,",
+      "morning": ".package__patient,",
+      "afternoon": ".package__patient,",
+      "evening": ".package__patient,",
+      "other": ".package__patient,",
+      "notes": ".package__patient,",
+      "id": 6
+    },
+    {
+      "name": ".package__patient,",
+      "dosage": ".package__patient,",
+      "morning": ".package__patient,",
+      "afternoon": ".package__patient,",
+      "evening": ".package__patient,",
+      "other": ".package__patient,",
+      "notes": ".package__patient,",
+      "id": 7
     }
   ]
 }

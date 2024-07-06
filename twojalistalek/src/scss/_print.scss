@@ -1,0 +1,20 @@
+
+@media print {
+  body {
+    background-color: white;
+  }
+
+  .drugs__container {
+    display: block;
+  }
+
+  header, footer, aside, nav, form, .pagination, .package__email, .no__drugs, .addDrugForm, .print-button {
+    display: none !important;
+  }
+
+  .drug {
+    display: block;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #ccc;
+  }
+}
