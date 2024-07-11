@@ -34,6 +34,6 @@ To run the application locally, follow these steps:
 ## Functions
 - **Drug List Creation**: Users can add, edit and delete drugs from their list.
 - **Printing medication list**: The application allows users to print the created medication list.
-- **Sending Medication List**: Users can send their medication list to the email address provided.
-- **Confirmation of drug intake**: When the user clicks the "I took the medicine" button, he/she receives a "Your health thanks you for remembering it <3" notification.
+- **Sending question**: A user can send an email with a question
+- **Confirmation of taking medicine**: When the user clicks the "I have accepted the medicine" button, he/she will receive a notification "You have taken the "given medicine" for the "disease" medicine ".
 
