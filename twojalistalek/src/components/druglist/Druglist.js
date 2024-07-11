@@ -3,13 +3,14 @@ import './Druglist.scss';
 import { fetchResp } from '../utils/fetchResp';
 import AddDrug from './AddDrug';
 import Drug from './Drug';
-import { Email } from "../email/Email";
 import ReactPaginate from 'react-paginate';
+import {useNavigate} from "react-router-dom";
+
 
 const Druglist = ({ patient }) => {
     const [drugs, setDrugs] = useState([]);
     const [pageNumber, setPageNumber] = useState(0);
-    const itemsPerPage = 3; // Liczba leków na stronie
+    const drugsPerPage = 4; // Liczba leków na stronie
 
 
     useEffect(() => {
@@ -23,9 +24,9 @@ const Druglist = ({ patient }) => {
         setDrugs((state) => [...state, drug]);
     };
 
-    const editDrug = ({ id, name, dosage, morning, afternoon, evening, other, notes }) => {
+    const editDrug = ({ id, name, dosage, morning, afternoon, evening, total, notes }) => {
         setDrugs((state) =>
-            state.map((drug) => (drug.id === id ? { ...drug, name, dosage, morning, afternoon, evening, other, notes } : drug))
+            state.map((drug) => (drug.id === id ? { ...drug, name, dosage, morning, afternoon, evening, total, notes } : drug))
         );
     };
 
@@ -33,14 +34,14 @@ const Druglist = ({ patient }) => {
         setDrugs((state) => state.filter((drug) => drug.id !== id));
     };
 
-    const pageCount = Math.ceil(drugs.length / itemsPerPage);
+    const pageCount = Math.ceil(drugs.length / drugsPerPage);
 
     const handlePageClick = ({ selected }) => {
         setPageNumber(selected);
     };
 
     const displayDrugs = drugs
-        .slice(pageNumber * itemsPerPage, (pageNumber + 1) * itemsPerPage)
+        .slice(pageNumber * drugsPerPage, (pageNumber + 1) * drugsPerPage)
         .map((drug) => (
             <Drug key={drug.id} drug={drug} editDrug={editDrug} deleteDrug={deleteDrug} />
         ));
@@ -48,6 +49,12 @@ const Druglist = ({ patient }) => {
     const handlePrint = () => {
             window.print();
     };
+
+
+    const navigateToEmail = useNavigate();
+    const handleNavigateToEmail = () => {
+        navigateToEmail('/Druglist/Email')
+    }
 
     return (
         <div className="package">
@@ -57,8 +64,9 @@ const Druglist = ({ patient }) => {
                 <p>Wiek: {patient.age}</p>
                 <p>Płeć: {patient.sex}</p>
 
-                <div className="package__email">
-                    <Email />
+                <div className="package__patient__email">
+                    <div>Jeśli masz pytanie, kliknij w przycisk poniżej</div>
+                    <button onClick={handleNavigateToEmail}>Zadaj pytanie</button>
                 </div>
 
                 <button className="print-button" onClick={handlePrint}>Drukuj listę leków</button>

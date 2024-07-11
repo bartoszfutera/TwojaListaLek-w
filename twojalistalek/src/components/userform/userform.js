@@ -1,17 +1,34 @@
-import React, { useState, } from 'react';
+import React, {useEffect, useState,} from 'react';
 import "./userform.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPrescription } from "@fortawesome/free-solid-svg-icons";
 import {useNavigate} from "react-router-dom";
+import {toast, ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
 
 const Userform = ({ setPatient }) => {
-    const [localPatient, setLocalPatient] = useState({
-        name: "",
-        surname: "",
-        age: "",
-        sex: ""
-    });
-    const navigate = useNavigate();
+
+    const getFormLocalPatient = () => {
+        const storedLocalPatient = localStorage.getItem("form");
+        if (!storedLocalPatient) return {
+            name:"",
+            surname:"",
+            age:"",
+            sex:""
+        };
+        return JSON.parse(storedLocalPatient)
+    }
+
+    const [localPatient, setLocalPatient] = useState(getFormLocalPatient);
+
+
+    useEffect(() => {
+        localStorage.setItem("form",JSON.stringify(localPatient))
+    }, [localPatient]);
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -21,19 +38,62 @@ const Userform = ({ setPatient }) => {
         }));
     };
 
+    const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (!localPatient.name || !localPatient.surname || !localPatient.age   || !localPatient.sex) {
+            toast.error('Uzupełnij wszystkie pola', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
+            return;
+        }
+
+        if (localPatient.age < 1 || localPatient.age > 125) {
+            toast.error('Wpisz wiek z zakresu od 1 do 125', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
+            return;
+        }
+
         setPatient(localPatient);
         navigate('/Druglist');
     };
 
+
+
     return (
         <main className="main container">
-            <FontAwesomeIcon icon={faPrescription} className="logo" size="5x" />
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="colored"
+            />
             <div className="form">
                 <h2 className="form__title">Twoja Lista Leków</h2>
                 <p className="form__description">Uzupełnij podane pola</p>
                 <form onSubmit={handleSubmit}>
+                    <FontAwesomeIcon icon={faPrescription} className="logo" size="5x" />
                     <div className="form__field">
                         <label>Imię</label>
                         <input
@@ -59,7 +119,7 @@ const Userform = ({ setPatient }) => {
                     <div className="form__field">
                         <label>Wiek</label>
                         <input
-                            type="text"
+                            type="number"
                             className="form__input"
                             name="age"
                             value={localPatient.age}
