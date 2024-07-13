@@ -29,7 +29,12 @@ To run the application locally, follow these steps:
     npm start
     ```
 
-4. Open a browser and go to `http://localhost:3000`
+4. Start the json-server --watch ./database/db.json --port 4000 server, open the second terminal and:
+    ```sh
+    npm start
+    ```    
+
+5. Open a browser and go to `http://localhost:3000`
 
 ## Functions
 - **Drug List Creation**: Users can add, edit and delete drugs from their list.
